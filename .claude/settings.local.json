@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(CI=true npx create-next-app@latest *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/actividades/act1)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/img/__TRACKED_VAR__)"
+    ]
+  }
+}

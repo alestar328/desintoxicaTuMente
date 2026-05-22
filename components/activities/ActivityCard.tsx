@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Clock3, MapPin, Plus } from "lucide-react";
+import { Clock3, MapPin, Globe, Plus } from "lucide-react";
 import { Activity, getCategoryById } from "@/lib/mock-data";
 import CategoryBadge from "@/components/common/CategoryBadge";
 import PriceBadge from "@/components/common/PriceBadge";
@@ -75,6 +75,10 @@ export default function ActivityCard({ activity, animationDelay = 0 }: ActivityC
                 {activity.neighborhood}
               </span>
             </div>
+            <span className="flex items-center gap-1 shrink-0 font-medium text-[11px] px-2 py-0.5 rounded-full bg-sand border border-border">
+              <Globe className="w-3 h-3" />
+              {activity.city}
+            </span>
           </div>
 
           {/* Actions */}

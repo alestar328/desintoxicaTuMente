@@ -13,6 +13,8 @@ export interface Provider {
   name: string;
   description: string;
   location: string;
+  city: string;
+  country: string;
   website: string;
 }
 
@@ -37,6 +39,8 @@ export interface Activity {
   maxAge: number;
   location: string;
   neighborhood: string;
+  city: string;
+  country: string;
   schedules: ActivitySchedule[];
   imageColor: string;
   imagePath: string;
@@ -114,6 +118,8 @@ export const providers: Provider[] = [
     name: "Paddle Barcelona",
     description: "Centro de deportes acuáticos en la Barceloneta con instructores certificados.",
     location: "Barceloneta, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://paddlebarcelona.com",
   },
   {
@@ -121,6 +127,8 @@ export const providers: Provider[] = [
     name: "Taller Gràcia Arts",
     description: "Espacio creativo en el barrio de Gràcia con talleres de arte para todas las edades.",
     location: "Gràcia, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://graciaarts.com",
   },
   {
@@ -128,6 +136,8 @@ export const providers: Provider[] = [
     name: "English Corner BCN",
     description: "Academia de idiomas con enfoque en conversación y cultura anglófona.",
     location: "Eixample, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://englishcornerbcn.com",
   },
   {
@@ -135,6 +145,8 @@ export const providers: Provider[] = [
     name: "FabLab Poblenou",
     description: "Laboratorio de fabricación digital y tecnología creativa en el 22@.",
     location: "Poblenou, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://fablabpoblenou.com",
   },
   {
@@ -142,6 +154,8 @@ export const providers: Provider[] = [
     name: "Playa Sport Club",
     description: "Club deportivo de playa con actividades gratuitas para jóvenes.",
     location: "Barceloneta, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://playasportclub.com",
   },
   {
@@ -149,6 +163,8 @@ export const providers: Provider[] = [
     name: "Rocódromo Sant Martí",
     description: "Centro de escalada indoor con rutas para todos los niveles.",
     location: "Sant Martí, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://rocodromosantmarti.com",
   },
   {
@@ -156,6 +172,8 @@ export const providers: Provider[] = [
     name: "Lente Urbana",
     description: "Colectivo de fotografía urbana que explora Barcelona con ojos nuevos.",
     location: "Raval, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://lenteurbana.cat",
   },
   {
@@ -163,6 +181,8 @@ export const providers: Provider[] = [
     name: "Aventura Náutica BCN",
     description: "Empresa de deportes náuticos en el Port Olímpic de Barcelona.",
     location: "Port Olímpic, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://aventuraNautica.com",
   },
   {
@@ -170,6 +190,8 @@ export const providers: Provider[] = [
     name: "Teatre Jove Gràcia",
     description: "Compañía de teatro juvenil que fomenta la expresión y la creatividad.",
     location: "Gràcia, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://teatrejovegracia.com",
   },
   {
@@ -177,6 +199,8 @@ export const providers: Provider[] = [
     name: "Huertos Comunitarios Horta",
     description: "Red de huertos urbanos comunitarios en el barrio de Horta.",
     location: "Horta, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://huertoshorta.com",
   },
   {
@@ -184,6 +208,8 @@ export const providers: Provider[] = [
     name: "Studio 22 Music",
     description: "Estudio de música y producción electrónica en el corazón del 22@.",
     location: "Poblenou, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://studio22music.com",
   },
   {
@@ -191,7 +217,63 @@ export const providers: Provider[] = [
     name: "Running Joves BCN",
     description: "Club de running juvenil que entrena en el Parque de la Ciutadella.",
     location: "Ciutadella, Barcelona",
+    city: "Barcelona",
+    country: "España",
     website: "https://runningjovesbcn.com",
+  },
+  {
+    id: "p13",
+    name: "Surf Costa Verde",
+    description: "Escuela de surf en la Costa Verde de Lima, con instructores locales certificados y tablas para todos los niveles.",
+    location: "Costa Verde, Miraflores",
+    city: "Lima",
+    country: "Perú",
+    website: "https://surfcostaverde.pe",
+  },
+  {
+    id: "p14",
+    name: "Terrissa Barcelona",
+    description: "Taller de cerámica artesanal en el Poblenou con hornos propios y materiales de calidad.",
+    location: "Poblenou, Barcelona",
+    city: "Barcelona",
+    country: "España",
+    website: "https://terrissabcn.com",
+  },
+  {
+    id: "p15",
+    name: "Escuela de Baile Ritmo Latino",
+    description: "Escuela de baile especializada en ritmos latinos: bachata, salsa y merengue para todos los niveles.",
+    location: "Eixample, Barcelona",
+    city: "Barcelona",
+    country: "España",
+    website: "https://ritmolatinobarcelona.com",
+  },
+  {
+    id: "p16",
+    name: "Salsa al Parque",
+    description: "Colectivo de bailarines que organiza clases y sesiones abiertas de salsa en los parques de Barcelona.",
+    location: "Ciutadella, Barcelona",
+    city: "Barcelona",
+    country: "España",
+    website: "https://salsaalparque.cat",
+  },
+  {
+    id: "p17",
+    name: "Asociación Gatos BCN",
+    description: "Asociación de protección animal dedicada al rescate, acogida y adopción de gatos callejeros en Barcelona.",
+    location: "Sant Antoni, Barcelona",
+    city: "Barcelona",
+    country: "España",
+    website: "https://gatosbcn.org",
+  },
+  {
+    id: "p18",
+    name: "Iglesia Evangélica Gràcia",
+    description: "Iglesia evangélica con talleres de formación cristiana abiertos a jóvenes de cualquier punto de partida.",
+    location: "Gràcia, Barcelona",
+    city: "Barcelona",
+    country: "España",
+    website: "https://iglesiagracia.org",
   },
 ];
 
@@ -213,6 +295,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Barceloneta Beach, s/n",
     neighborhood: "Barceloneta",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Lunes", startTime: "09:00", endTime: "10:30" },
       { weekday: "Lunes", startTime: "15:00", endTime: "16:30" },
@@ -239,6 +323,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Carrer de la Providència, 42",
     neighborhood: "Gràcia",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Martes", startTime: "17:00", endTime: "19:00" },
       { weekday: "Jueves", startTime: "17:00", endTime: "19:00" },
@@ -264,6 +350,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Carrer d'Enric Granados, 18",
     neighborhood: "Eixample",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Lunes", startTime: "10:00", endTime: "11:00" },
       { weekday: "Jueves", startTime: "10:00", endTime: "11:00" },
@@ -289,6 +377,8 @@ export const activities: Activity[] = [
     maxAge: 20,
     location: "Carrer de Pallars, 193",
     neighborhood: "Poblenou",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Martes", startTime: "09:00", endTime: "12:00" },
       { weekday: "Viernes", startTime: "16:00", endTime: "19:00" },
@@ -313,6 +403,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Platja de la Barceloneta",
     neighborhood: "Barceloneta",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Miércoles", startTime: "18:00", endTime: "20:00" },
       { weekday: "Sábado", startTime: "16:00", endTime: "18:00" },
@@ -338,6 +430,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Carrer de Tànger, 98",
     neighborhood: "Sant Martí",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Lunes", startTime: "17:00", endTime: "18:30" },
       { weekday: "Miércoles", startTime: "17:00", endTime: "18:30" },
@@ -363,6 +457,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Plaça dels Àngels, 1",
     neighborhood: "Raval",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Viernes", startTime: "10:00", endTime: "12:30" },
       { weekday: "Domingo", startTime: "10:00", endTime: "12:30" },
@@ -387,6 +483,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Moll de Mestral, Port Olímpic",
     neighborhood: "Port Olímpic",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Martes", startTime: "10:00", endTime: "12:00" },
       { weekday: "Jueves", startTime: "10:00", endTime: "12:00" },
@@ -412,6 +510,8 @@ export const activities: Activity[] = [
     maxAge: 22,
     location: "Carrer de Verdi, 150",
     neighborhood: "Gràcia",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Jueves", startTime: "16:00", endTime: "17:30" },
       { weekday: "Sábado", startTime: "11:00", endTime: "12:30" },
@@ -436,6 +536,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Carrer de Feliu i Codina, 20",
     neighborhood: "Horta",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Miércoles", startTime: "16:00", endTime: "17:00" },
       { weekday: "Sábado", startTime: "10:00", endTime: "11:00" },
@@ -460,6 +562,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Carrer de Roc Boronat, 117",
     neighborhood: "Poblenou",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Martes", startTime: "17:00", endTime: "19:00" },
       { weekday: "Viernes", startTime: "17:00", endTime: "19:00" },
@@ -484,6 +588,8 @@ export const activities: Activity[] = [
     maxAge: 25,
     location: "Passeig de Pujades, 1 (entrada Ciutadella)",
     neighborhood: "Ciutadella",
+    city: "Barcelona",
+    country: "España",
     schedules: [
       { weekday: "Lunes", startTime: "07:30", endTime: "08:30" },
       { weekday: "Miércoles", startTime: "07:30", endTime: "08:30" },
@@ -492,6 +598,164 @@ export const activities: Activity[] = [
     ],
     imageColor: "#EF4444",
     imagePath: "/img/running_cover.jpg",
+  },
+  {
+    id: "act13",
+    title: "Surf Costa Verde",
+    description:
+      "Aprende a surfear en las olas del Pacífico en la playa de la Costa Verde. Clases para principiantes y nivel intermedio con instructores certificados. Tabla y traje incluidos.",
+    whyThisActivity:
+      "Surfear es pura presencia: no hay pantallas que valgan cuando una ola se acerca. El surf desarrolla el equilibrio, la lectura del entorno natural y una conexión profunda con el océano que ningún videojuego puede replicar.",
+    categoryId: "playa",
+    providerId: "p13",
+    price: 35,
+    priceType: "paid",
+    priceLabel: "S/35/sesión",
+    durationMin: 120,
+    minAge: 12,
+    maxAge: 25,
+    location: "Playa La Pampilla, Costa Verde",
+    neighborhood: "Costa Verde",
+    city: "Lima",
+    country: "Perú",
+    schedules: [
+      { weekday: "Sábado", startTime: "07:00", endTime: "09:00" },
+      { weekday: "Domingo", startTime: "07:00", endTime: "09:00" },
+    ],
+    imageColor: "#0EA5E9",
+    imagePath: "/img/surfLima_cover.jpg",
+  },
+  {
+    id: "act14",
+    title: "Taller de Cerámica",
+    description:
+      "Aprende a modelar arcilla con tus manos: desde el centrado en el torno hasta el acabado y esmaltado. Grupos reducidos, horno propio. Todas las piezas son tuyas.",
+    whyThisActivity:
+      "La cerámica exige paciencia, tacto y presencia absoluta — con las manos llenas de arcilla no hay forma de mirar el móvil. Crear algo tridimensional que puedes tocar y usar es una de las experiencias más satisfactorias que existen.",
+    categoryId: "artistica",
+    providerId: "p14",
+    price: 22,
+    priceType: "paid",
+    priceLabel: "€22/sesión",
+    durationMin: 120,
+    minAge: 13,
+    maxAge: 25,
+    location: "Carrer de Pallars, 85",
+    neighborhood: "Poblenou",
+    city: "Barcelona",
+    country: "España",
+    schedules: [
+      { weekday: "Martes", startTime: "18:00", endTime: "20:00" },
+      { weekday: "Jueves", startTime: "18:00", endTime: "20:00" },
+      { weekday: "Sábado", startTime: "10:00", endTime: "12:00" },
+    ],
+    imageColor: "#A855F7",
+    imagePath: "/img/cercamica_cover.jpg",
+  },
+  {
+    id: "act15",
+    title: "Taller de Bachata",
+    description:
+      "Aprende bachata desde cero o mejora tu técnica en una escuela de baile profesional. Clases en pareja o individual, música en vivo algunos viernes. Ambiente joven y sin juicios.",
+    whyThisActivity:
+      "Bailar bachata desarrolla la escucha activa, la coordinación y la conexión con otra persona — todo lo contrario a la interacción digital. El contacto humano genuino y el ritmo son un antídoto natural contra la sobrexposición a pantallas.",
+    categoryId: "social",
+    providerId: "p15",
+    price: 10,
+    priceType: "paid",
+    priceLabel: "€10/sesión",
+    durationMin: 60,
+    minAge: 14,
+    maxAge: 25,
+    location: "Carrer del Consell de Cent, 255",
+    neighborhood: "Eixample",
+    city: "Barcelona",
+    country: "España",
+    schedules: [
+      { weekday: "Lunes", startTime: "19:00", endTime: "20:00" },
+      { weekday: "Miércoles", startTime: "19:00", endTime: "20:00" },
+      { weekday: "Viernes", startTime: "20:00", endTime: "21:00" },
+    ],
+    imageColor: "#F59E0B",
+    imagePath: "/img/bachata_cover.jpg",
+  },
+  {
+    id: "act16",
+    title: "Salsa en la Ciutadella",
+    description:
+      "Sesión abierta de salsa en el Parc de la Ciutadella. Nivel principiante y medio. Música en directo los domingos. Solo tienes que aparecer — el resto lo ponemos nosotros.",
+    whyThisActivity:
+      "Bailar en un parque con desconocidos rompe barreras sociales de una manera que ninguna red social puede replicar. La salsa es comunicación pura: escuchas el ritmo, lees a tu pareja y te mueves juntos sin mediar palabras.",
+    categoryId: "social",
+    providerId: "p16",
+    price: null,
+    priceType: "free",
+    priceLabel: "Gratis",
+    durationMin: 90,
+    minAge: 12,
+    maxAge: 25,
+    location: "Passeig de Pujades, 1 (Parc de la Ciutadella)",
+    neighborhood: "Ciutadella",
+    city: "Barcelona",
+    country: "España",
+    schedules: [
+      { weekday: "Sábado", startTime: "18:00", endTime: "19:30" },
+      { weekday: "Domingo", startTime: "17:00", endTime: "18:30" },
+    ],
+    imageColor: "#F59E0B",
+    imagePath: "/img/salsa_cover.jpg",
+  },
+  {
+    id: "act17",
+    title: "Voluntariado: Cuida un Gatito",
+    description:
+      "Ayuda en la asociación Gatos BCN: socialización de gatitos rescatados, limpieza de espacios, preparación de adopciones y acompañamiento en jornadas de acogida. Sin experiencia previa necesaria.",
+    whyThisActivity:
+      "Cuidar animales desarrolla la empatía, la responsabilidad y la calma — cualidades que el scroll infinito erosiona. Estar con gatos reduce el cortisol de forma medida y proporciona una conexión emocional real que ninguna pantalla puede dar.",
+    categoryId: "social",
+    providerId: "p17",
+    price: null,
+    priceType: "free",
+    priceLabel: "Gratis",
+    durationMin: 120,
+    minAge: 13,
+    maxAge: 25,
+    location: "Carrer del Parlament, 37",
+    neighborhood: "Sant Antoni",
+    city: "Barcelona",
+    country: "España",
+    schedules: [
+      { weekday: "Sábado", startTime: "10:00", endTime: "12:00" },
+      { weekday: "Domingo", startTime: "10:00", endTime: "12:00" },
+    ],
+    imageColor: "#22C55E",
+    imagePath: "/img/voluntarioGato_cover.jpg",
+  },
+  {
+    id: "act18",
+    title: "Enseñanza de Fe Cristiana",
+    description:
+      "Taller semanal de la Iglesia Evangélica Gràcia abierto a jóvenes. Estudio bíblico, preguntas existenciales, debate respetuoso y comunidad. No hace falta tener fe previa — solo ganas de pensar.",
+    whyThisActivity:
+      "Hacerse preguntas sobre el sentido, la identidad y los valores es una necesidad adolescente que las redes sociales no satisfacen. Este espacio ofrece comunidad real, escucha activa y marcos de reflexión que van más allá del entretenimiento inmediato.",
+    categoryId: "aprendizaje",
+    providerId: "p18",
+    price: null,
+    priceType: "free",
+    priceLabel: "Gratis",
+    durationMin: 90,
+    minAge: 12,
+    maxAge: 25,
+    location: "Carrer de Verdi, 88",
+    neighborhood: "Gràcia",
+    city: "Barcelona",
+    country: "España",
+    schedules: [
+      { weekday: "Miércoles", startTime: "18:30", endTime: "20:00" },
+      { weekday: "Domingo", startTime: "11:00", endTime: "12:30" },
+    ],
+    imageColor: "#FF5C35",
+    imagePath: "/img/iglesia_cover.jpg",
   },
 ];
 

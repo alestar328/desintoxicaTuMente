@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { SlidersHorizontal, X } from "lucide-react";
+import { SlidersHorizontal, X, Globe } from "lucide-react";
 import {
   activities,
   categories,
@@ -31,6 +31,10 @@ const categoryIcons: Record<string, React.ElementType> = {
 
 const WEEKDAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
+const ALL_CITIES = Array.from(
+  new Map(activities.map((a) => [a.city, { city: a.city, country: a.country }])).values()
+);
+
 function CatalogoContent() {
   const searchParams = useSearchParams();
   const initialCat = searchParams.get("categoria") ?? "";
@@ -41,6 +45,7 @@ function CatalogoContent() {
   const [priceFilter, setPriceFilter] = useState<"all" | "free" | "paid">("all");
   const [durationFilter, setDurationFilter] = useState<"all" | "short" | "mid" | "long">("all");
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const filtered = useMemo(() => {
@@ -55,9 +60,10 @@ function CatalogoContent() {
         const actDays = a.schedules.map((s) => s.weekday);
         if (!selectedDays.some((d) => actDays.includes(d))) return false;
       }
+      if (selectedCities.length > 0 && !selectedCities.includes(a.city)) return false;
       return true;
     });
-  }, [selectedCategories, priceFilter, durationFilter, selectedDays]);
+  }, [selectedCategories, priceFilter, durationFilter, selectedDays, selectedCities]);
 
   function toggleCategory(id: string) {
     setSelectedCategories((prev) =>
@@ -71,21 +77,62 @@ function CatalogoContent() {
     );
   }
 
+  function toggleCity(city: string) {
+    setSelectedCities((prev) =>
+      prev.includes(city) ? prev.filter((c) => c !== city) : [...prev, city]
+    );
+  }
+
   function clearFilters() {
     setSelectedCategories([]);
     setPriceFilter("all");
     setDurationFilter("all");
     setSelectedDays([]);
+    setSelectedCities([]);
   }
 
   const activeFilterCount =
     selectedCategories.length +
     (priceFilter !== "all" ? 1 : 0) +
     (durationFilter !== "all" ? 1 : 0) +
-    selectedDays.length;
+    selectedDays.length +
+    selectedCities.length;
 
   const Sidebar = () => (
     <div className="space-y-6">
+      {/* Ciudad */}
+      <div>
+        <p className="text-sm font-semibold text-ink mb-3">Ciudad</p>
+        <div className="space-y-2">
+          {ALL_CITIES.map(({ city, country }) => {
+            const checked = selectedCities.includes(city);
+            return (
+              <label key={city} className="flex items-center gap-2.5 cursor-pointer group">
+                <div
+                  className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors ${
+                    checked ? "bg-primary border-transparent" : "border-border"
+                  }`}
+                  onClick={() => toggleCity(city)}
+                >
+                  {checked && <span className="text-white text-[10px] font-bold">✓</span>}
+                </div>
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={checked}
+                  onChange={() => toggleCity(city)}
+                />
+                <Globe className="w-4 h-4 shrink-0 text-ink-light" />
+                <span className="text-sm text-ink group-hover:text-primary transition-colors">
+                  {city}
+                  <span className="text-ink-light ml-1 text-xs">{country}</span>
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Categorías */}
       <div>
         <p className="text-sm font-semibold text-ink mb-3">Categoría</p>
@@ -235,6 +282,18 @@ function CatalogoContent() {
         {/* Active filter pills */}
         {activeFilterCount > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
+            {selectedCities.map((city) => (
+              <span
+                key={city}
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-sand border border-border text-ink"
+              >
+                <Globe className="w-3 h-3" />
+                {city}
+                <button onClick={() => toggleCity(city)} aria-label="Quitar filtro ciudad">
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            ))}
             {selectedCategories.map((catId) => {
               const cat = categories.find((c) => c.id === catId);
               if (!cat) return null;

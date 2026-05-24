@@ -53,7 +53,7 @@ export default function LandingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-sand">
+      <section className="relative min-h-screen flex items-start lg:items-center pt-16 overflow-hidden bg-sand">
         {/* Background wave */}
         <svg
           className="absolute bottom-0 left-0 right-0 w-full"
@@ -68,7 +68,7 @@ export default function LandingPage() {
           />
         </svg>
 
-        <div className="relative max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-content mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div>
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-3 py-1.5 text-sm font-medium mb-6">
@@ -80,7 +80,7 @@ export default function LandingPage() {
               <span className="text-primary">recordarás</span>
             </h1>
             <p className="text-ink-light text-lg sm:text-xl mb-8 max-w-lg">
-              Actividades reales en Barcelona. Sin pantallas. Sin excusas.
+              Actividades y comunidades saludables en tu ciudad.<br /><strong>Menos pantallas,</strong> más atención, más libertad.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -154,12 +154,12 @@ export default function LandingPage() {
             {howItWorks.map(({ step, icon: Icon, title, desc }) => (
               <div key={step} className="flex flex-col items-center text-center">
                 <div className="relative mb-5">
-                  <span className="font-display font-extrabold text-7xl text-primary/10 select-none">
+                  <span className="font-display font-extrabold text-9xl text-primary/10 select-none leading-none">
                     {step}
                   </span>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon className="w-[72px] h-[72px] text-primary" />
                     </div>
                   </div>
                 </div>

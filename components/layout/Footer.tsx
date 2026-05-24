@@ -13,7 +13,7 @@ export default function Footer() {
                 <Waves className="w-4 h-4 text-white" />
               </div>
               <span className="font-display font-bold text-white">
-                Desintoxica tu mente
+                Despeja tu mente
               </span>
             </Link>
             <p className="text-sm text-white/60 max-w-xs">
@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-white/40">
-            © 2026 Desintoxica tu mente. Todos los derechos reservados.
+            © 2026 Despeja tu mente. Todos los derechos reservados.
           </p>
           <p className="text-xs text-white/40">
             Hecho con ❤️ en Barcelona

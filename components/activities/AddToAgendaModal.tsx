@@ -89,7 +89,7 @@ export default function AddToAgendaModal({
                 <p className="text-sm font-medium text-ink mb-1.5">Horario</p>
                 <div className="flex flex-wrap gap-2">
                   {activity.schedules.map((s) => {
-                    const val = `${s.startTime}-${s.endTime}`;
+                    const val = `${s.weekday}-${s.startTime}-${s.endTime}`;
                     return (
                       <button
                         key={val}

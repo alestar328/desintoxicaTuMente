@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Desintoxica tu mente — Actividades en Barcelona",
+  title: "Despeja tu mente — Actividades en Barcelona",
   description:
     "Descubre y organiza actividades presenciales saludables para jóvenes en Barcelona. Paddle surf, arte, idiomas, robótica y mucho más.",
   keywords: ["actividades Barcelona", "jóvenes", "ocio saludable", "sin pantallas"],
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${plusJakarta.variable} ${dmSans.variable}`}>
+    <html lang="es" className={`${plusJakarta.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="font-body bg-surface text-ink">
         <Navbar />
         <main>{children}</main>

@@ -8,12 +8,14 @@ import {
   GraduationCap,
   Dumbbell,
   CalendarDays,
-  Star,
-  CheckCircle2,
   Building2,
 } from "lucide-react";
+
 import { activities, categories } from "@/lib/mock-data";
 import ActivityCard from "@/components/activities/ActivityCard";
+import ActivityCarousel from "@/components/home/ActivityCarousel";
+import ExplorerIcon from "@/components/icons/ExplorerIcon";
+import HappyIcon from "@/components/icons/HappyIcon";
 
 const categoryIcons: Record<string, React.ElementType> = {
   exterior: TreePine,
@@ -27,7 +29,7 @@ const categoryIcons: Record<string, React.ElementType> = {
 const howItWorks = [
   {
     step: "01",
-    icon: Star,
+    icon: ExplorerIcon,
     title: "Explorad juntos",
     desc: "Navega el catálogo de actividades con filtros por categoría, precio y barrio. Descubre lo que Barcelona tiene para ofrecer.",
   },
@@ -39,7 +41,7 @@ const howItWorks = [
   },
   {
     step: "03",
-    icon: CheckCircle2,
+    icon: HappyIcon,
     title: "¡A disfrutar!",
     desc: "Llega puntual, desconecta el móvil y vive la experiencia. Después, valórala y descubre más.",
   },
@@ -97,35 +99,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Visual collage */}
-          <div className="grid grid-cols-2 gap-3 h-80 lg:h-96">
-            {[
-              { color: "#0EA5E9", icon: Waves, label: "Paddle Surf" },
-              { color: "#A855F7", icon: Palette, label: "Arte" },
-              { color: "#22C55E", icon: TreePine, label: "Exterior" },
-              { color: "#EF4444", icon: Dumbbell, label: "Deporte" },
-            ].map(({ color, icon: Icon, label }, i) => (
-              <div
-                key={label}
-                className={`rounded-2xl flex flex-col items-center justify-center gap-2 ${
-                  i === 0 ? "row-span-1" : ""
-                }`}
-                style={{ backgroundColor: color + "22" }}
-              >
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: color + "33" }}
-                >
-                  <Icon className="w-6 h-6" style={{ color }} />
-                </div>
-                <span
-                  className="text-xs font-semibold"
-                  style={{ color }}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
+          {/* Activity carousel */}
+          <div className="h-80 lg:h-[420px]">
+            <ActivityCarousel activities={activities} categories={categories} />
           </div>
         </div>
       </section>

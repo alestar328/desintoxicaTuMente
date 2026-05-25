@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-white/60 max-w-xs">
-              Actividades chulas para conectar contigo y con otros. Menos pantallas, más vida — agenda actividades y añádelas a tu calendario personal.
+              Actividades chulas para conectar contigo, con tus amigos o nuevos amigos. Menos pantallas, más vida — agenda actividades y añádelas a tu calendario personal.
             </p>
           </div>
 

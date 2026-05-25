@@ -266,15 +266,6 @@ export const providers: Provider[] = [
     country: "España",
     website: "https://gatosbcn.org",
   },
-  {
-    id: "p18",
-    name: "Iglesia Evangélica Gràcia",
-    description: "Iglesia evangélica con talleres de formación cristiana abiertos a jóvenes de cualquier punto de partida.",
-    location: "Gràcia, Barcelona",
-    city: "Barcelona",
-    country: "España",
-    website: "https://iglesiagracia.org",
-  },
 ];
 
 export const activities: Activity[] = [
@@ -730,32 +721,6 @@ export const activities: Activity[] = [
     ],
     imageColor: "#22C55E",
     imagePath: "/img/voluntarioGato_cover.jpg",
-  },
-  {
-    id: "act18",
-    title: "Enseñanza de Fe Cristiana",
-    description:
-      "Taller semanal de la Iglesia Evangélica Gràcia abierto a jóvenes. Estudio bíblico, preguntas existenciales, debate respetuoso y comunidad. No hace falta tener fe previa — solo ganas de pensar.",
-    whyThisActivity:
-      "Hacerse preguntas sobre el sentido, la identidad y los valores es una necesidad adolescente que las redes sociales no satisfacen. Este espacio ofrece comunidad real, escucha activa y marcos de reflexión que van más allá del entretenimiento inmediato.",
-    categoryId: "aprendizaje",
-    providerId: "p18",
-    price: null,
-    priceType: "free",
-    priceLabel: "Gratis",
-    durationMin: 90,
-    minAge: 12,
-    maxAge: 25,
-    location: "Carrer de Verdi, 88",
-    neighborhood: "Gràcia",
-    city: "Barcelona",
-    country: "España",
-    schedules: [
-      { weekday: "Miércoles", startTime: "18:30", endTime: "20:00" },
-      { weekday: "Domingo", startTime: "11:00", endTime: "12:30" },
-    ],
-    imageColor: "#FF5C35",
-    imagePath: "/img/iglesia_cover.jpg",
   },
 ];
 

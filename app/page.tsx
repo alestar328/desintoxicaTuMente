@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -16,6 +17,31 @@ import ActivityCard from "@/components/activities/ActivityCard";
 import ActivityCarousel from "@/components/home/ActivityCarousel";
 import ExplorerIcon from "@/components/icons/ExplorerIcon";
 import HappyIcon from "@/components/icons/HappyIcon";
+import { buildWebSiteSchema, SITE_URL } from "@/lib/json-ld";
+
+export const metadata: Metadata = {
+  title: "Despeja tu mente — Actividades para jóvenes en Barcelona",
+  description:
+    "Descubre actividades presenciales saludables para jóvenes de 12 a 25 años en Barcelona. Paddle surf, teatro, robótica, escalada y mucho más. Menos pantallas, más vida.",
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: SITE_URL,
+    title: "Despeja tu mente — Actividades para jóvenes en Barcelona",
+    description:
+      "Descubre actividades presenciales saludables para jóvenes de 12 a 25 años en Barcelona.",
+    images: [{ url: "/img/paddelSurf_cover.jpg", width: 1200, height: 630 }],
+  },
+  keywords: [
+    "actividades jóvenes Barcelona",
+    "ocio saludable Barcelona",
+    "alternativas pantallas adolescentes",
+    "actividades extraescolares",
+    "paddle surf Barcelona",
+    "escalada Barcelona",
+    "teatro joven Barcelona",
+  ],
+};
 
 const categoryIcons: Record<string, React.ElementType> = {
   exterior: TreePine,
@@ -50,8 +76,14 @@ const howItWorks = [
 const featuredActivities = activities.slice(0, 3);
 
 export default function LandingPage() {
+  const websiteSchema = buildWebSiteSchema();
   return (
     <>
+      {/* Schema WebSite + SearchAction: indica a los crawlers que el sitio es buscable */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Hero */}
       <section className="relative min-h-screen flex items-start lg:items-center pt-16 overflow-hidden bg-sand">
         {/* Background wave */}

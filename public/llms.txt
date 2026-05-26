@@ -1,0 +1,78 @@
+# Despeja tu mente
+
+> Plataforma que conecta a jóvenes (12-25 años) y sus familias con actividades
+> presenciales saludables en Barcelona como alternativa al tiempo de pantalla.
+> Las familias y jóvenes descubren actividades por categoría, las organizan en
+> una agenda semanal equilibrada y contactan directamente con los proveedores.
+
+## Qué ofrecemos
+
+- Catálogo de actividades presenciales en Barcelona organizadas en 6 categorías:
+  Exterior, Playa, Artística, Social, Aprendizaje y Deporte.
+- Actividades gratuitas y de pago, con información de precio, duración, ubicación,
+  rango de edad recomendado y proveedor responsable.
+- Planificador de agenda semanal para organizar las actividades elegidas y evitar
+  la saturación (máximo recomendado: 2 actividades por día).
+- Fichas detalladas por actividad con horarios disponibles, descripción y el valor
+  que aporta frente al tiempo de pantalla.
+
+## Categorías disponibles
+
+- Exterior — Naturaleza, huertos urbanos, aire libre: [/actividades?categoria=exterior](https://despejatumente.com/actividades?categoria=exterior)
+- Playa — Paddle surf, kayak, vóley playa, deportes acuáticos: [/actividades?categoria=playa](https://despejatumente.com/actividades?categoria=playa)
+- Artística — Ilustración, cerámica, fotografía, música: [/actividades?categoria=artistica](https://despejatumente.com/actividades?categoria=artistica)
+- Social — Teatro, baile, voluntariado, debate: [/actividades?categoria=social](https://despejatumente.com/actividades?categoria=social)
+- Aprendizaje — Idiomas, robótica, programación, maker: [/actividades?categoria=aprendizaje](https://despejatumente.com/actividades?categoria=aprendizaje)
+- Deporte — Escalada, running, fitness: [/actividades?categoria=deporte](https://despejatumente.com/actividades?categoria=deporte)
+
+## Actividades destacadas
+
+Ejemplos del catálogo actual (Barcelona, verano 2026):
+
+- Paddle Surf Iniciación — €15/sesión, Barceloneta, 90 min, 12-25 años
+- Taller de Ilustración — €20/sesión, Gràcia, 120 min, 13-25 años
+- Inglés Conversacional — €12/sesión, Eixample, 60 min, 14-25 años
+- Robótica y Drones — €25/sesión, Poblenou, 180 min, 12-20 años
+- Vóley Playa — Gratis, Barceloneta, 120 min, 14-25 años
+- Escalada en Rocódromo — €18/sesión, Sant Martí, 90 min, 12-25 años
+- Fotografía Urbana — €15/sesión, Raval, 150 min, 14-25 años
+- Kayak en el Puerto — €22/sesión, Port Olímpic, 120 min, 14-25 años
+- Teatro Joven — €10/sesión, Gràcia, 90 min, 12-22 años
+- Huerto Urbano — Gratis, Horta, 60 min, 12-25 años
+- DJ y Producción Musical — €30/sesión, Poblenou, 120 min, 14-25 años
+- Running Club Joven — Gratis, Ciutadella, 60 min, 14-25 años
+- Taller de Cerámica — €22/sesión, Poblenou, 120 min, 13-25 años
+- Taller de Bachata — €10/sesión, Eixample, 60 min, 14-25 años
+- Salsa en la Ciutadella — Gratis, Ciutadella, 90 min, 12-25 años
+- Voluntariado: Cuida un Gatito — Gratis, Sant Antoni, 120 min, 13-25 años
+
+Catálogo completo: [/actividades](https://despejatumente.com/actividades)
+
+## Páginas principales
+
+- Catálogo de actividades: [/actividades](https://despejatumente.com/actividades)
+- Cómo funciona la plataforma: [/#como-funciona](https://despejatumente.com/#como-funciona)
+- Para proveedores (academias, escuelas, talleres): [/proveedores](https://despejatumente.com/proveedores)
+- Mi agenda semanal: [/agenda](https://despejatumente.com/agenda)
+
+## Para proveedores
+
+Academias, escuelas, talleres y asociaciones de Barcelona (y próximamente Sabadell)
+pueden publicar sus actividades de forma gratuita durante la fase beta.
+No hay comisión ni cuota de suscripción en esta fase.
+
+Más información y alta de proveedores: [/proveedores](https://despejatumente.com/proveedores)
+
+## Contexto y misión
+
+La plataforma nace como respuesta al uso excesivo de pantallas en jóvenes.
+El objetivo es facilitar que jóvenes de 12 a 25 años y sus familias descubran
+y agenden actividades presenciales enriquecedoras en su ciudad, conectando
+directamente con los proveedores locales sin intermediación.
+
+Ciudad de lanzamiento: Barcelona. Próxima expansión: Sabadell.
+
+## Datos de contacto
+
+Web: https://despejatumente.com
+Email: hola@despejatumente.com

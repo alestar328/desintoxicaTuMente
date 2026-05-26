@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Providers from "./providers";
+import { buildOrganizationSchema, SITE_URL } from "@/lib/json-ld";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -19,10 +21,49 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Re-descubre — Actividades en Barcelona",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Despeja tu mente — Actividades para jóvenes en Barcelona",
+    template: "%s — Despeja tu mente",
+  },
   description:
-    "Actividades chulas para conectar contigo, con tus amigos o nuevos amigos. Menos pantallas, más vida — agenda actividades y añádelas a tu calendario personal.",
-  keywords: ["actividades Barcelona", "jóvenes", "ocio saludable", "sin pantallas", "agenda", "calendario"],
+    "Descubre actividades presenciales saludables para jóvenes de 12 a 25 años en Barcelona. Paddle surf, teatro, robótica, escalada y mucho más. Menos pantallas, más vida.",
+  keywords: [
+    "actividades Barcelona jóvenes",
+    "ocio saludable adolescentes",
+    "alternativas pantallas jóvenes",
+    "actividades extraescolares Barcelona",
+    "agenda semanal jóvenes",
+    "clases deporte Barcelona",
+    "talleres creativos Barcelona",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: SITE_URL,
+    siteName: "Despeja tu mente",
+    title: "Despeja tu mente — Actividades para jóvenes en Barcelona",
+    description:
+      "Descubre actividades presenciales saludables para jóvenes de 12 a 25 años en Barcelona. Menos pantallas, más vida.",
+    images: [
+      {
+        url: "/img/paddelSurf_cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Paddle surf en Barcelona — Despeja tu mente",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Despeja tu mente — Actividades para jóvenes en Barcelona",
+    description: "Descubre actividades presenciales saludables para jóvenes en Barcelona.",
+    images: ["/img/paddelSurf_cover.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -33,9 +74,16 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${plusJakarta.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="font-body bg-surface text-ink">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {/* Schema Organization: describe la plataforma a los crawlers de IA y buscadores */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildOrganizationSchema()) }}
+        />
+        <Providers>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

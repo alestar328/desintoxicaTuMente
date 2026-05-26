@@ -1,7 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendarDays, ArrowRight, Clock3 } from "lucide-react";
 import WeeklyPlanner from "@/components/agenda/WeeklyPlanner";
 import { mockAgendaItems, getActivityById, getCategoryById, categories } from "@/lib/mock-data";
+import { SITE_URL } from "@/lib/json-ld";
+
+export const metadata: Metadata = {
+  title: "Mi agenda semanal",
+  description:
+    "Organiza tus actividades semanales con el planificador de Despeja tu mente. Visualiza tu semana y mantén un equilibrio saludable: máximo 2 actividades por día.",
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: `${SITE_URL}/agenda`,
+    title: "Mi agenda semanal — Despeja tu mente",
+    description:
+      "Planificador semanal de actividades para jóvenes. Organiza tu semana y desconecta de las pantallas.",
+  },
+  keywords: ["agenda actividades Barcelona", "planificador semanal jóvenes", "organizar actividades"],
+};
 
 function AgendaSummary() {
   const total = mockAgendaItems.length;

@@ -327,12 +327,12 @@ export default function ProveedorRegistroPage() {
 
               <button
                 onClick={handleFinish}
-                disabled={isSaving || isLoading || !user}
+                disabled={isSaving || isLoading}
                 className="w-full flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3.5 rounded-full hover:bg-primary-dark transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
-                {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-                {isSaving ? "Creando perfil…" : "Ir a mi panel de gestión"}
-                {!isSaving && <ArrowRight className="w-4 h-4" />}
+                {(isSaving || isLoading) && <Loader2 className="w-4 h-4 animate-spin" />}
+                {isSaving ? "Creando perfil…" : isLoading ? "Verificando sesión…" : "Ir a mi panel de gestión"}
+                {!isSaving && !isLoading && <ArrowRight className="w-4 h-4" />}
               </button>
             </div>
           )}

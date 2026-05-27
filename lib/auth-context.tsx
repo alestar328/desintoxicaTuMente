@@ -87,6 +87,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     // Carga inicial
     supabase.auth.getUser().then(({ data: { user: authUser } }) => {
+      console.log("[AuthContext] getUser() resolved — user:", authUser?.id ?? "null");
       if (authUser) {
         loadProfile(authUser).finally(() => setIsLoading(false));
       } else {
@@ -97,12 +98,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Suscripción a cambios de sesión (login / logout / token refresh)
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        if (session?.user) {
-          await loadProfile(session.user);
-        } else {
-          setUser(null);
+        console.log("[AuthContext] onAuthStateChange event:", event, "has session:", !!session?.user);
+        try {
+          if (session?.user) {
+            await loadProfile(session.user);
+          } else {
+            setUser(null);
+          }
+        } catch (e) {
+          console.error("[AuthContext] onAuthStateChange error — isLoading will still resolve:", e);
+        } finally {
+          setIsLoading(false);
         }
-        setIsLoading(false);
       }
     );
 

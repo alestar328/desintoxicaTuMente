@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Upload, X, ImageIcon } from "lucide-react";
 
 interface ImageUploadProps {
@@ -30,19 +30,24 @@ export default function ImageUpload({
   const [previews, setPreviews] = useState<string[]>(value);
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  // Ref para acceso síncrono al valor actual sin depender del closure del updater
+  const previewsRef = useRef<string[]>(value);
+
+  useEffect(() => {
+    previewsRef.current = previews;
+  }, [previews]);
 
   function handleFiles(files: FileList | null) {
     if (!files) return;
-    const toAdd = Array.from(files).slice(0, maxFiles - previews.length);
+    const toAdd = Array.from(files).slice(0, maxFiles - previewsRef.current.length);
     toAdd.forEach((file) => {
       const reader = new FileReader();
       reader.onload = (e) => {
         const url = e.target?.result as string;
-        setPreviews((prev) => {
-          const updated = [...prev, url];
-          onChange?.(updated);
-          return updated;
-        });
+        const updated = [...previewsRef.current, url];
+        previewsRef.current = updated;
+        setPreviews(updated);
+        onChange?.(updated);
       };
       reader.readAsDataURL(file);
     });
@@ -50,6 +55,7 @@ export default function ImageUpload({
 
   function removeImage(index: number) {
     const updated = previews.filter((_, i) => i !== index);
+    previewsRef.current = updated;
     setPreviews(updated);
     onChange?.(updated);
   }

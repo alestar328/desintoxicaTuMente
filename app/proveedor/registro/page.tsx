@@ -30,7 +30,7 @@ const inputClass =
 
 export default function ProveedorRegistroPage() {
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -63,7 +63,19 @@ export default function ProveedorRegistroPage() {
   }
 
   async function handleFinish() {
-    if (!user || isSaving) return;
+    console.log("[handleFinish] called — user:", user, "isSaving:", isSaving, "isLoading:", isLoading);
+
+    if (isSaving) {
+      console.log("[handleFinish] aborted: already saving");
+      return;
+    }
+
+    if (!user) {
+      console.error("[handleFinish] aborted: user is null — auth context not ready or session lost");
+      setError("Sesión no encontrada. Por favor, vuelve a iniciar sesión.");
+      return;
+    }
+
     setIsSaving(true);
     setError(null);
 
@@ -72,11 +84,21 @@ export default function ProveedorRegistroPage() {
     // Subir avatar si el usuario eligió uno
     let avatarUrl: string | null = null;
     if (data.avatar[0]?.startsWith("data:")) {
+      console.log("[handleFinish] uploading avatar for user:", user.id);
       const res = await fetch(data.avatar[0]);
       const blob = await res.blob();
       const file = new File([blob], "avatar.jpg", { type: blob.type });
       avatarUrl = await uploadProviderAvatar(supabase, user.id, file);
+      console.log("[handleFinish] avatar upload result:", avatarUrl);
+    } else {
+      console.log("[handleFinish] no avatar to upload");
     }
+
+    console.log("[handleFinish] calling createProvider with:", {
+      user_id: user.id,
+      name: data.businessName,
+      city: data.city,
+    });
 
     const { error: createError } = await createProvider(supabase, {
       user_id: user.id,
@@ -93,12 +115,16 @@ export default function ProveedorRegistroPage() {
       is_active: true,
     });
 
+    console.log("[handleFinish] createProvider result — error:", createError);
+
     if (createError) {
-      setError("No se pudo crear el perfil. Inténtalo de nuevo.");
+      console.error("[handleFinish] createProvider error details:", JSON.stringify(createError));
+      setError(`No se pudo crear el perfil: ${createError.message ?? "error desconocido"}`);
       setIsSaving(false);
       return;
     }
 
+    console.log("[handleFinish] success, redirecting to /proveedor/dashboard");
     router.push("/proveedor/dashboard");
   }
 
@@ -301,7 +327,7 @@ export default function ProveedorRegistroPage() {
 
               <button
                 onClick={handleFinish}
-                disabled={isSaving}
+                disabled={isSaving || isLoading || !user}
                 className="w-full flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3.5 rounded-full hover:bg-primary-dark transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
                 {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
